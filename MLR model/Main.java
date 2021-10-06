@@ -22,17 +22,11 @@ public class Main {
                 {77.8,  32.9,   349}
         };
 
-        double x = 0.0;
-
-        if (args.length > 0) {
-            try {
-                x = Double.parseDouble(args[0]);
-            } catch (NumberFormatException e) {
-                System.err.println("Argument [" + args[0] + "] must be a number.");
-                System.exit(1);
-            }
-        }
+        double x1 = 64.5, x2 = 31.5;
 
         MLR mlr = new MLR(dataSet);
+
+        System.out.println("Y = " + mlr.beta(0) + " + "+ mlr.beta(1) + "(" + x1 + ") + " + mlr.beta(2) + "(" + x2 + ")");
+        System.out.println("Y = " + mlr.predictY(x1, x2));
     }
 }
